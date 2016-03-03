@@ -1,5 +1,6 @@
-package com.heykorean.cadarkver6;
+package com.heykorean.cadarkver6.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -7,7 +8,10 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.FrameLayout;
 
+import com.heykorean.cadarkver6.R;
 import com.heykorean.cadarkver6.ui.HomeListcarFragment;
 import com.heykorean.cadarkver6.ui.PostCarFragment;
 import com.heykorean.cadarkver6.ui.ManagerCarsFragment;
@@ -15,7 +19,9 @@ import com.heykorean.cadarkver6.ui.ManagerCarsFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    FrameLayout noticeArea;
 
     private TabLayout tabLayout;
     private ViewPager viewPager;
@@ -38,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setSelectedTabIndicatorColor(123456);
         setupTabIcons();
+
+        noticeArea = (FrameLayout) findViewById(R.id.notificationArea);
+        noticeArea.setOnClickListener(this);
     }
 
     private void setupTabIcons() {
@@ -54,6 +63,15 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFrag(new ManagerCarsFragment(), "THREE");
         adapter.addFrag(new ManagerCarsFragment(), "FOUR");
         viewPager.setAdapter(adapter);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.notificationArea:
+                JumpToNoticeScreen();
+                break;
+        }
     }
 
     class ViewPagerAdapter extends FragmentPagerAdapter {
@@ -84,5 +102,10 @@ public class MainActivity extends AppCompatActivity {
             //return mFragmentTitleList.get(position);
             return null;
         }
+    }
+
+    public void JumpToNoticeScreen() {
+        Intent intent = new Intent(this, NotificationActivity.class);
+        startActivity(intent);
     }
 }

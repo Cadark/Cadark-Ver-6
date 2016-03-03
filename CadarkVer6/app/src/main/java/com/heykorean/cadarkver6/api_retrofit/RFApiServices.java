@@ -16,4 +16,8 @@ public interface RFApiServices {
     @GET("/cadark/listcar")
     Call<JsonElement> getContacts();
 
+    //get list contact
+    @GET("cadark/notification_bid")
+    Call<JsonElement> getNotifications();
+
 }
