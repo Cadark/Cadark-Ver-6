@@ -29,15 +29,21 @@ public class NotificationActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
+        initView();
+    }
 
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-
-        arrayList =  RFNotification.getNotificationList();
-        listViewNotification = (ListView)findViewById(R.id.listNotification);
+    @Override
+    protected void onStart() {
+        super.onStart();
+        arrayList = RFNotification.getNotificationList();
+        listViewNotification = (ListView) findViewById(R.id.listNotification);
         adapterNotificationt = new RFAdapterNotificationList(this, R.layout.notification_item, arrayList);
         listViewNotification.setAdapter(adapterNotificationt);
+    }
 
+    private void initView() {
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
         backBtnNotice = (FrameLayout) findViewById(R.id.backBtnNotice);
         backBtnNotice.setOnClickListener(new View.OnClickListener() {
             @Override

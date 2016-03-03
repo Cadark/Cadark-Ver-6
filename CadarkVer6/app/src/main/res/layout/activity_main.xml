@@ -1,51 +1,53 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal"
+        android:background="@color/colorMain"
         android:gravity="center_vertical"
-        android:background="@color/colorMain">
+        android:orientation="horizontal">
 
         <ImageButton
-            android:layout_margin="16dp"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:background="@drawable/ic_menu"/>
+            android:layout_margin="16dp"
+            android:background="@drawable/ic_menu" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textSize="20dp"
             android:layout_weight="1"
-            android:text="Cadark"/>
-        
-        <FrameLayout
-            android:id="@+id/notificationArea"
-            android:layout_width="50dp"
-            android:layout_height="50dp">
+            android:text="Cadark"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:textStyle="bold" />
 
-            <ImageButton
-                android:layout_margin="16dp"
+
+        <FrameLayout
+            android:id="@+id/fl_notification"
+            android:layout_width="56dp"
+            android:layout_height="56dp">
+
+            <ImageView
+                android:id="@+id/iv_ring"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:background="@drawable/ic_bell"/>
+                android:layout_gravity="center"
+                android:background="@drawable/ic_bell"
+                android:clickable="true" />
 
             <ImageView
                 android:layout_width="17dp"
                 android:layout_height="17dp"
-                android:scaleType="centerInside"
                 android:layout_gravity="right"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
-                android:background="@drawable/ic_notice_bg"/>
+                android:background="@drawable/ic_notice_bg"
+                android:scaleType="centerInside" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -53,11 +55,12 @@
                 android:layout_gravity="right"
                 android:layout_marginRight="12dp"
                 android:layout_marginTop="9dp"
+                android:text="12"
                 android:textColor="@color/white"
-                android:textSize="10dp"
-                android:text="12"/>
+                android:textSize="10dp" />
 
         </FrameLayout>
+
 
     </LinearLayout>
 
@@ -73,20 +76,19 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_gravity="bottom"
-            android:layout_alignParentBottom="true">
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom">
 
             <android.support.design.widget.TabLayout
                 android:id="@+id/tabs"
-                app:tabGravity="fill"
-                app:tabMode="fixed"
-                android:background="@color/material_blue_grey_800"
-                app:tabIndicatorColor="@color/colorMain"
-                app:tabSelectedTextColor="@color/colorMain"
-                app:tabTextColor="@color/white"
                 android:layout_width="match_parent"
-                android:layout_height="50dp">
-            </android.support.design.widget.TabLayout>
+                android:layout_height="50dp"
+                android:background="@color/material_blue_grey_800"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@color/colorMain"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@color/colorMain"
+                app:tabTextColor="@color/white"></android.support.design.widget.TabLayout>
 
         </LinearLayout>
 
@@ -100,8 +102,7 @@
             <android.support.v4.view.ViewPager
                 android:id="@+id/viewpager"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </android.support.v4.view.ViewPager>
+                android:layout_height="match_parent"></android.support.v4.view.ViewPager>
 
         </LinearLayout>
 

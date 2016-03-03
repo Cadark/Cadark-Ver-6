@@ -10,6 +10,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.heykorean.cadarkver6.R;
 import com.heykorean.cadarkver6.ui.HomeListcarFragment;
@@ -36,16 +38,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         setupViewPager(viewPager);
-
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setSelectedTabIndicatorColor(123456);
         setupTabIcons();
-
-        noticeArea = (FrameLayout) findViewById(R.id.notificationArea);
+        noticeArea = (FrameLayout) findViewById(R.id.fl_notification);
         noticeArea.setOnClickListener(this);
     }
 
@@ -68,8 +67,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.notificationArea:
+            case R.id.fl_notification:
                 JumpToNoticeScreen();
+                Toast.makeText(MainActivity.this, "Notification", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
