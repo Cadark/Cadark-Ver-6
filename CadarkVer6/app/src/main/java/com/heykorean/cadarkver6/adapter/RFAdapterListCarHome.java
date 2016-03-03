@@ -42,7 +42,7 @@ public class RFAdapterListCarHome extends ArrayAdapter<CarListHome> {
             holder.years = (TextView) convertView.findViewById(R.id.tv_year);
             holder.mileage = (TextView) convertView.findViewById(R.id.tv_mileage);
             holder.area = (TextView) convertView.findViewById(R.id.tv_area);
-            chageTime(2780);
+
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -50,7 +50,7 @@ public class RFAdapterListCarHome extends ArrayAdapter<CarListHome> {
 
         CarListHome carListHome = arrayContact.get(position);
         holder.nameCar.setText(carListHome.getNameCar());
-        holder.timeRemain.setText(carListHome.getTimeRemain());
+        holder.timeRemain.setText("" + chageTime(Integer.parseInt(carListHome.getTimeRemain())));
         holder.years.setText(carListHome.getYears());
         holder.mileage.setText(carListHome.getMileage());
         holder.area.setText(carListHome.getArea());
@@ -59,10 +59,12 @@ public class RFAdapterListCarHome extends ArrayAdapter<CarListHome> {
     }
     public String chageTime(int minute){
         int d = minute/1440;
-        int h = (minute-1440);
-        int m =2880%minute;
-                Log.i(TAG,""+d+":"+h+":"+m);
-        return "";
+        int h = Math.abs(minute - 1440)/60;
+        if(h==24){
+            h=0;
+        }
+        int m =Math.abs(minute - 1440)%60;
+        return ""+d+"d "+h+"h "+m+"m";
     }
     public class ViewHolder {
         public int idCar;

@@ -36,6 +36,13 @@ public class HomeListcarFragment extends Fragment {
         return v;
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+        adapterContact = new RFAdapterListCarHome(getActivity(), R.layout.item_list_car, arrListCar);
+        listViewCar.setAdapter(adapterContact);
+    }
+
     private void initView(View v) {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
@@ -43,9 +50,7 @@ public class HomeListcarFragment extends Fragment {
         arrListCar = RFApi.getContact();
         listViewCar = (ListView) v.findViewById(R.id.listViewCar);
         listViewCar.setDescendantFocusability(ListView.FOCUS_BLOCK_DESCENDANTS);
-        ;
-        adapterContact = new RFAdapterListCarHome(getActivity(), R.layout.item_list_car, arrListCar);
-        listViewCar.setAdapter(adapterContact);
+
         listViewCar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
