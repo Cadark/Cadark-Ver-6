@@ -16,7 +16,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp">
 
-            <ImageButton
+            <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:background="@drawable/ic_back"
@@ -51,7 +51,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="9dp">
-
 
         </ListView>
 
