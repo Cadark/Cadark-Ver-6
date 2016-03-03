@@ -516,7 +516,7 @@
                             android:layout_weight="1"
                             android:background="@color/white"
                             android:gravity="center"
-                            android:text="Heated steering wheel"
+                            android:text="Heated \nsteering wheel"
                             android:textColor="@color/black" />
 
                         <TextView
@@ -537,7 +537,7 @@
                             android:layout_weight="1"
                             android:background="@color/white"
                             android:gravity="center"
-                            android:text="Vanlilated front seats"
+                            android:text="Vanlilated \nfront seats"
                             android:textColor="@color/black" />
 
 
@@ -587,7 +587,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_height="56dp"
                     android:layout_marginBottom="8dp"
                     android:layout_marginTop="16dp">
 
