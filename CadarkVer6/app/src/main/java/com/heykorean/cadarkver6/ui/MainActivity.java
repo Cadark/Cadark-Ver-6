@@ -1,17 +1,19 @@
 package com.heykorean.cadarkver6.ui;
 
 import android.app.ActionBar;
+import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -25,13 +27,13 @@ import com.heykorean.cadarkver6.ui.ManagerCarsFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "MainActivity";
-    FrameLayout noticeArea;
-
+    private FrameLayout noticeArea,flMenu;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+    private  ViewPagerAdapter adapter;
     private int[] tabIcons = {
             R.drawable.ic_home,
             R.drawable.ic_upload,
@@ -41,16 +43,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        adapter = new ViewPagerAdapter(getSupportFragmentManager());
         super.onCreate(savedInstanceState);
+        flMenu = (FrameLayout) findViewById(R.id.fl_menu);
         setContentView(R.layout.activity_main);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
-
         setupViewPager(viewPager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
         setupTabIcons();
         noticeArea = (FrameLayout) findViewById(R.id.fl_notification);
         noticeArea.setOnClickListener(this);
+     //   flMenu.setOnClickListener(this);
     }
 
     private void setupTabIcons() {
@@ -61,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void setupViewPager(ViewPager viewPager) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+
         adapter.addFrag(new HomeListcarFragment(), "Home");
         adapter.addFrag(new PostCarFragment(), "Upload");
         adapter.addFrag(new ManagerCarsFragment(), "Selling");
@@ -75,6 +79,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.fl_notification:
                 JumpToNoticeScreen();
 //                Toast.makeText(MainActivity.this, "Notification", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.fl_menu:
+                Toast.makeText(MainActivity.this, "Menu", Toast.LENGTH_SHORT).show();
                 break;
         }
     }

@@ -1,8 +1,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,11 +14,20 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <ImageButton
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_margin="16dp"
-            android:background="@drawable/ic_menu" />
+        <FrameLayout
+            android:id="@+id/fl_menu"
+            android:layout_width="56dp"
+            android:layout_height="56dp">
+
+            <ImageView
+                android:id="@+id/i"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:background="@drawable/ic_menu" />
+
+        </FrameLayout>
 
         <TextView
             android:layout_width="0dp"
@@ -60,17 +72,19 @@
 
         </FrameLayout>
 
-
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
         android:layout_height="8dp"
         android:background="@drawable/shadow" />
+    <!--aaaa-->
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="56dp"
@@ -99,13 +113,13 @@
                 android:id="@+id/viewpager"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="6dp"
-                >
+                android:layout_marginBottom="6dp">
 
             </android.support.v4.view.ViewPager>
 
         </LinearLayout>
 
     </RelativeLayout>
+
 
 </LinearLayout>
