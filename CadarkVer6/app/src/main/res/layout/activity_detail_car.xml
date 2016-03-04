@@ -57,7 +57,64 @@
 
             </LinearLayout>
 
-            <Button
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:weightSum="3"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="16dp"
+                        android:text="Time Remain"/>
+
+                    <Button
+                        android:layout_width="180dp"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center"
+                        android:background="@color/colorMain"
+                        android:textSize="22dp"
+                        android:textColor="@color/white"
+                        android:text="01:45:30"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textSize="16dp"
+                        android:text="Time Bid"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="5dp"
+                        android:gravity="center"
+                        android:textSize="22dp"
+                        android:text="15 Person"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!--<Button
                 android:layout_width="180dp"
                 android:layout_height="56dp"
                 android:layout_marginTop="24dp"
@@ -65,7 +122,7 @@
                 android:background="@color/colorMain"
                 android:textSize="22dp"
                 android:textColor="@color/white"
-                android:text="01:45:30"/>
+                android:text="01:45:30"/>-->
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -73,124 +130,6 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:orientation="vertical">
-                <!--Bid price-->
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginBottom="12dp"
-                    android:textColor="@color/colorMain"
-                    android:textSize="16dp"
-                    android:textStyle="bold"
-                    android:text="Aution History"/>
-
-                <!--<ListView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="12dp">
-
-
-
-                </ListView>-->
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="72dp"
-                    android:background="@color/white"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/avarCarNotice"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:scaleType="fitCenter"
-                        android:layout_marginLeft="16dp"
-                        android:src="@drawable/farah_yousef"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="16dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/nameCarNotice"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center_vertical"
-                            android:layout_weight="1"
-                            android:textSize="16dp"
-                            android:textColor="@android:color/black"
-                            android:text="Car Nitro V8"/>
-
-                        <TextView
-                            android:id="@+id/timeCarNotice"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center_vertical|right"
-                            android:layout_marginRight="12dp"
-                            android:layout_weight="1"
-                            android:textSize="16dp"
-                            android:textColor="@color/colorAccent"
-                            android:text="2,000 $"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="72dp"
-                    android:layout_marginTop="9dp"
-                    android:layout_marginBottom="8dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:background="@color/white">
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:scaleType="fitCenter"
-                        android:layout_marginLeft="16dp"
-                        android:src="@drawable/farah_yousef"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="16dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center_vertical"
-                            android:layout_weight="1"
-                            android:textSize="16dp"
-                            android:textColor="@android:color/black"
-                            android:text="Car Nitro V8"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center_vertical|right"
-                            android:layout_marginRight="12dp"
-                            android:layout_weight="1"
-                            android:textSize="16dp"
-                            android:textColor="@color/colorAccent"
-                            android:text="2,000 $"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:background="@color/colorMain"
-                    android:text="HIDE DETAIL"
-                    android:textColor="@color/white"
-                    android:textSize="16dp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -531,7 +470,7 @@
                                 android:background="@color/colorMain"
                                 android:gravity="center"
                                 android:text="Heated seats"
-                                android:textColor="@color/black" />
+                                android:textColor="@color/white" />
 
                             <TextView
                                 android:layout_width="0dp"
@@ -541,7 +480,7 @@
                                 android:background="@color/white"
                                 android:gravity="center"
                                 android:text="Power seats"
-                                android:textColor="@color/black" />
+                                android:textColor="@color/white" />
                         </LinearLayout>
 
                         <LinearLayout
