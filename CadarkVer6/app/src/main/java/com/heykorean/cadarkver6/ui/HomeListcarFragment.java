@@ -54,7 +54,7 @@ public class HomeListcarFragment extends Fragment {
         listViewCar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getContext(), "11111", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Position"+position, Toast.LENGTH_SHORT).show();
             }
         });
     }

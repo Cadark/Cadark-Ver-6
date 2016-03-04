@@ -1,6 +1,9 @@
 package com.heykorean.cadarkver6.ui;
 
+import android.app.ActionBar;
+import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -8,6 +11,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
@@ -21,8 +25,9 @@ import com.heykorean.cadarkver6.ui.ManagerCarsFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
+    private static final String TAG = "MainActivity";
     FrameLayout noticeArea;
 
     private TabLayout tabLayout;
@@ -39,10 +44,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
+
         setupViewPager(viewPager);
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
-        tabLayout.setSelectedTabIndicatorColor(123456);
         setupTabIcons();
         noticeArea = (FrameLayout) findViewById(R.id.fl_notification);
         noticeArea.setOnClickListener(this);
@@ -69,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.fl_notification:
                 JumpToNoticeScreen();
-                Toast.makeText(MainActivity.this, "Notification", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this, "Notification", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
@@ -103,11 +108,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                Toast.makeText(MainActivity.this, "1", Toast.LENGTH_SHORT).show();
 //            }
             return mFragmentTitleList.get(position);
-           // return null;
+            // return null;
         }
-
     }
-
     public void JumpToNoticeScreen() {
         Intent intent = new Intent(this, NotificationActivity.class);
         startActivity(intent);

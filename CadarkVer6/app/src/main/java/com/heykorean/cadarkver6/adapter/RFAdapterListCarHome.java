@@ -52,7 +52,7 @@ public class RFAdapterListCarHome extends ArrayAdapter<CarListHome> {
         holder.nameCar.setText(carListHome.getNameCar());
         holder.timeRemain.setText("" + chageTime(Integer.parseInt(carListHome.getTimeRemain())));
         holder.years.setText(carListHome.getYears());
-        holder.mileage.setText(carListHome.getMileage());
+        holder.mileage.setText(carListHome.getMileage()+" km");
         holder.area.setText(carListHome.getArea());
         Picasso.with(holder.imageCar.getContext()).load(carListHome.getUrlCar()).into(holder.imageCar);
         return convertView;
