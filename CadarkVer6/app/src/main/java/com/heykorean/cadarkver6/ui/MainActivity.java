@@ -99,8 +99,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         @Override
         public CharSequence getPageTitle(int position) {
-            //return mFragmentTitleList.get(position);
-            return null;
+            if(position==1){
+                Toast.makeText(MainActivity.this, "1", Toast.LENGTH_SHORT).show();
+            }
+            return mFragmentTitleList.get(position);
+           // return null;
         }
     }
 
