@@ -54,13 +54,10 @@ public class HomeListcarFragment extends Fragment {
         listViewCar.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-<<<<<<< HEAD
                 Toast.makeText(getContext(), "Position" + position, Toast.LENGTH_SHORT).show();
-=======
                 Toast.makeText(getContext(), "11111", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getActivity(), DetailActivity.class);
+                Intent intent = new Intent(getActivity(), DetailCarActivity.class);
                 startActivity(intent);
->>>>>>> origin/master
             }
         });
     }

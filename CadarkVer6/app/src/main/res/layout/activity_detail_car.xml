@@ -341,7 +341,7 @@
                             android:background="@color/colorMain"
                             android:gravity="center"
                             android:text="None"
-                            android:textColor="@color/black" />
+                            android:textColor="@color/white" />
 
                         <TextView
                             android:layout_width="10dp"
@@ -421,7 +421,7 @@
                                 android:background="@color/colorMain"
                                 android:gravity="center"
                                 android:text="Sunroof"
-                                android:textColor="@color/black" />
+                                android:textColor="@color/white" />
 
                             <TextView
                                 android:layout_width="0dp"
@@ -459,7 +459,7 @@
                                 android:background="@color/colorMain"
                                 android:gravity="center"
                                 android:text="Leather seat"
-                                android:textColor="@color/black" />
+                                android:textColor="@color/white" />
 
                             <TextView
                                 android:layout_width="0dp"
@@ -480,7 +480,7 @@
                                 android:background="@color/white"
                                 android:gravity="center"
                                 android:text="Power seats"
-                                android:textColor="@color/white" />
+                                android:textColor="@color/black" />
                         </LinearLayout>
 
                         <LinearLayout

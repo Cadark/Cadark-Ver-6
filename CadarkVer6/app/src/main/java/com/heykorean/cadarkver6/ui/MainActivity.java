@@ -1,8 +1,5 @@
 package com.heykorean.cadarkver6.ui;
 
-import android.app.ActionBar;
-import android.app.Activity;
-import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -10,19 +7,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.heykorean.cadarkver6.R;
-import com.heykorean.cadarkver6.ui.HomeListcarFragment;
-import com.heykorean.cadarkver6.ui.PostCarFragment;
-import com.heykorean.cadarkver6.ui.ManagerCarsFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,10 +20,10 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final String TAG = "MainActivity";
-    private FrameLayout noticeArea,flMenu;
+    private FrameLayout noticeArea, flMenu;
     private TabLayout tabLayout;
     private ViewPager viewPager;
-    private  ViewPagerAdapter adapter;
+    private ViewPagerAdapter adapter;
     private int[] tabIcons = {
             R.drawable.ic_home,
             R.drawable.ic_upload,
@@ -54,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setupTabIcons();
         noticeArea = (FrameLayout) findViewById(R.id.fl_notification);
         noticeArea.setOnClickListener(this);
-     //   flMenu.setOnClickListener(this);
+        //   flMenu.setOnClickListener(this);
     }
 
     private void setupTabIcons() {
@@ -69,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         adapter.addFrag(new HomeListcarFragment(), "Home");
         adapter.addFrag(new PostCarFragment(), "Upload");
         adapter.addFrag(new SellingCarFragment(), "Selling");
-        adapter.addFrag(new ManagerCarsFragment(), "Guide");
+        adapter.addFrag(new SellingCarFragment(), "Guide");
         viewPager.setAdapter(adapter);
     }
 
@@ -118,6 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // return null;
         }
     }
+
     public void JumpToNoticeScreen() {
         Intent intent = new Intent(this, NotificationActivity.class);
         startActivity(intent);

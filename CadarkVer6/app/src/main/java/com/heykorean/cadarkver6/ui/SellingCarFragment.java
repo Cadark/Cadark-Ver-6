@@ -22,10 +22,8 @@ public class SellingCarFragment extends Fragment implements View.OnClickListener
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_selling_cars, container, false);
-
         carSellingItem = (CardView) v.findViewById(R.id.carSellingItem);
         carSellingItem.setOnClickListener(this);
-
         return v;
     }
 

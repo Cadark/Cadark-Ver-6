@@ -1,10 +1,12 @@
 package com.heykorean.cadarkver6.ui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
@@ -17,12 +19,11 @@ import com.heykorean.cadarkver6.models.NotificaionList;
 
 import java.util.ArrayList;
 
-public class NotificationActivity extends Activity {
+public class NotificationActivity extends Activity implements AdapterView.OnItemClickListener{
 
     private ListView listViewNotification;
     private RFAdapterNotificationList adapterNotificationt;
     private ArrayList<NotificaionList> arrayList;
-
     FrameLayout backBtnNotice;
 
     @Override
@@ -39,6 +40,7 @@ public class NotificationActivity extends Activity {
         listViewNotification = (ListView) findViewById(R.id.listNotification);
         adapterNotificationt = new RFAdapterNotificationList(this, R.layout.notification_item, arrayList);
         listViewNotification.setAdapter(adapterNotificationt);
+        listViewNotification.setOnItemClickListener(this);
     }
 
     private void initView() {
@@ -54,4 +56,8 @@ public class NotificationActivity extends Activity {
     }
 
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        startActivity(new Intent(this,BidPriceActivity.class));
+    }
 }

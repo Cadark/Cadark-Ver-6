@@ -10,7 +10,7 @@ import com.heykorean.cadarkver6.R;
 /**
  * Created by Hey.Hung on 3/4/2016.
  */
-public class DetailActivity extends Activity {
+public class DetailCarActivity extends Activity {
 
     FrameLayout backBtnNotice;
 
