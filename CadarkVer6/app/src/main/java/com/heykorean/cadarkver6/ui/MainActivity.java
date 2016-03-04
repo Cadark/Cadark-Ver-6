@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         adapter.addFrag(new HomeListcarFragment(), "Home");
         adapter.addFrag(new PostCarFragment(), "Upload");
-        adapter.addFrag(new ManagerCarsFragment(), "Selling");
+        adapter.addFrag(new SellingCarFragment(), "Selling");
         adapter.addFrag(new ManagerCarsFragment(), "Guide");
         viewPager.setAdapter(adapter);
     }
