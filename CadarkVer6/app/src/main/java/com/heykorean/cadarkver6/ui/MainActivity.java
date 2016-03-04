@@ -57,10 +57,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new HomeListcarFragment(), "ONE");
-        adapter.addFrag(new PostCarFragment(), "TWO");
-        adapter.addFrag(new ManagerCarsFragment(), "THREE");
-        adapter.addFrag(new ManagerCarsFragment(), "FOUR");
+        adapter.addFrag(new HomeListcarFragment(), "Home");
+        adapter.addFrag(new PostCarFragment(), "Upload");
+        adapter.addFrag(new ManagerCarsFragment(), "Selling");
+        adapter.addFrag(new ManagerCarsFragment(), "Guide");
         viewPager.setAdapter(adapter);
     }
 
@@ -99,12 +99,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         @Override
         public CharSequence getPageTitle(int position) {
-            if(position==1){
-                Toast.makeText(MainActivity.this, "1", Toast.LENGTH_SHORT).show();
-            }
+//            if(position==1){
+//                Toast.makeText(MainActivity.this, "1", Toast.LENGTH_SHORT).show();
+//            }
             return mFragmentTitleList.get(position);
            // return null;
         }
+
     }
 
     public void JumpToNoticeScreen() {
