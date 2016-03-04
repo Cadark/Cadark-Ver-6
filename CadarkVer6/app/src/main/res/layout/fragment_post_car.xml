@@ -395,12 +395,12 @@
                     android:orientation="vertical">
 
                     <EditText
-                        android:padding="4dp"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:background="@android:color/transparent"
                         android:gravity="top"
                         android:hint="If you had an accident history, please let know us the part you have replaced so that we can give you exact quote. (ex: I have replaced car trunk because of the accident)"
+                        android:padding="4dp"
                         android:textSize="14dp" />
                 </LinearLayout>
 
@@ -516,17 +516,7 @@
                             android:layout_weight="1"
                             android:background="@color/white"
                             android:gravity="center"
-                            android:text="Heated \nsteering wheel"
-                            android:textColor="@color/black" />
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="56dp"
-                            android:layout_marginLeft="4dp"
-                            android:layout_weight="1"
-                            android:background="@color/white"
-                            android:gravity="center"
-                            android:text="Power folding mirror"
+                            android:text="Heated "
                             android:textColor="@color/black" />
 
                         <TextView
@@ -537,7 +527,17 @@
                             android:layout_weight="1"
                             android:background="@color/white"
                             android:gravity="center"
-                            android:text="Vanlilated \nfront seats"
+                            android:text="Power folding mirror"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="56dp"
+                            android:layout_marginLeft="4dp"
+                            android:layout_weight="1"
+                            android:background="@color/white"
+                            android:gravity="center"
+                            android:text="Vanlilated"
                             android:textColor="@color/black" />
 
 
