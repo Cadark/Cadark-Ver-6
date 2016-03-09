@@ -7,7 +7,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.Toast;
@@ -18,7 +20,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
     private static final String TAG = "MainActivity";
     private FrameLayout noticeArea, flMenu;
     private TabLayout tabLayout;
@@ -33,8 +34,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        adapter = new ViewPagerAdapter(getSupportFragmentManager());
         super.onCreate(savedInstanceState);
+        adapter = new ViewPagerAdapter(getSupportFragmentManager());
         flMenu = (FrameLayout) findViewById(R.id.fl_menu);
         setContentView(R.layout.activity_main);
         viewPager = (ViewPager) findViewById(R.id.viewpager);
@@ -48,18 +49,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void setupTabIcons() {
+        //Tab Home
         tabLayout.getTabAt(0).setIcon(tabIcons[0]);
+        //Tab Upload
         tabLayout.getTabAt(1).setIcon(tabIcons[1]);
+        //Tab Selling
         tabLayout.getTabAt(2).setIcon(tabIcons[2]);
+        //Tab Guide
         tabLayout.getTabAt(3).setIcon(tabIcons[3]);
     }
 
     private void setupViewPager(ViewPager viewPager) {
-
         adapter.addFrag(new HomeListcarFragment(), "Home");
         adapter.addFrag(new PostCarFragment(), "Upload");
         adapter.addFrag(new SellingCarFragment(), "Selling");
-        adapter.addFrag(new SellingCarFragment(), "Guide");
+        adapter.addFrag(new GuideFragment(), "Guide");
         viewPager.setAdapter(adapter);
     }
 
@@ -79,11 +83,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     class ViewPagerAdapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
-
         public ViewPagerAdapter(FragmentManager manager) {
             super(manager);
         }
-
         @Override
         public Fragment getItem(int position) {
             return mFragmentList.get(position);
@@ -101,9 +103,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         @Override
         public CharSequence getPageTitle(int position) {
-//            if(position==1){
-//                Toast.makeText(MainActivity.this, "1", Toast.LENGTH_SHORT).show();
-//            }
+            Log.i(TAG,""+position);
             return mFragmentTitleList.get(position);
             // return null;
         }
